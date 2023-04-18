@@ -1,0 +1,13 @@
+version : '3.8'
+services:
+  shadowsocks-libev-manger:
+    build: ./
+    image: 10.1.0.5:5000/shadowsocks-libev-manger
+    container_name: shadowsocks-libev-manger
+    restart: always
+    ports:
+      - "7722:7722"
+      - "7723:7723"
+      - "8389:8388"
+    volumes:
+      - /home/shadowsocks-libev:/etc/shadowsocks-libev

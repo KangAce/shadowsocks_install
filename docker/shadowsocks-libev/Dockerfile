@@ -14,6 +14,7 @@ COPY v2ray-plugin.sh /root/v2ray-plugin.sh
 COPY xray-plugin.sh /root/xray-plugin.sh
 COPY config_sample.json /etc/shadowsocks-libev/config.json
 COPY manager_sample.json /etc/shadowsocks-libev/manager.json
+COPY local_sample.json /etc/shadowsocks-libev/local.json
 RUN set -ex \
 	&& runDeps="git build-base c-ares-dev autoconf automake libev-dev libtool libsodium-dev linux-headers mbedtls-dev pcre-dev" \
 	&& apk add --no-cache --virtual .build-deps ${runDeps} \
@@ -42,5 +43,6 @@ RUN set -ex \
 
 VOLUME /etc/shadowsocks-libev
 ENV TZ=Asia/Shanghai
-CMD [ "ss-manager", "-c", "/etc/shadowsocks-libev/manager.json" ]
 #CMD [ "ss-server", "-c", "/etc/shadowsocks-libev/config.json" ]
+#CMD [ "ss-manager", "-c", "/etc/shadowsocks-libev/manager.json" ]
+#CMD [ "ss-local", "-c", "/etc/shadowsocks-libev/local.json" ]

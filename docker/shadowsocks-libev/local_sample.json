@@ -1,0 +1,11 @@
+
+{
+  "server": "38.6.185.82",
+  "server_port": 8388,
+  "password": "kangaroo.ink",
+  "method": "chacha20-ietf-poly1305",
+  "plugin": "v2ray-plugin_windows_amd64",
+  "plugin_opts": "host=bing.com",
+  "timeout": 5,
+  "warnLegacyUrl": false
+}

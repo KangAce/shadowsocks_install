@@ -11,3 +11,14 @@ services:
       - "8389:8388"
     volumes:
       - /home/shadowsocks-libev:/etc/shadowsocks-libev
+  shadowsocks-libev-local:
+#    build: ./
+    image: 10.1.0.5:5000/shadowsocks-libev-local
+    container_name: shadowsocks-libev-local
+    restart: always
+    ports:
+      - "1080:1080"
+    volumes:
+      - /home/shadowsocks-libev:/etc/shadowsocks-libev
+    entrypoint: ss-local -c /etc/shadowsocks-libev/local.json
+    network_mode: "host"
